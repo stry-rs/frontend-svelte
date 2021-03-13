@@ -5,23 +5,16 @@
 	export let kind: TagKind;
 </script>
 
-<style lang="postcss">
-.tag {
-	@apply inline-block;
-	@apply mb-1 mr-1 px-3 py-1;
-	@apply transition-colors duration-75;
-	@apply rounded;
-}
-
-.tag:focus {
-	@apply ring-2 ring-offset-2 ring-offset-gray-900 ring-blue-400;
-}
-</style>
-
 <a
 	href={ "/tag/" + id }
 
-	class="tag"
+	class="
+		inline-block
+		text-sm
+		mr-1 mb-1 px-3 py-1
+		transition-colors duration-75
+		rounded focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-blue-400
+	"
 
 	class:bg-red-400={kind === TagKind.Warning}
 	class:hover:bg-red-500={kind === TagKind.Warning}
