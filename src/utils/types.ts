@@ -18,4 +18,17 @@ export enum State {
 	Abandoned,
 }
 
-export interface ITag {}
+export interface ITag {
+	id: string;
+	kind: TagKind;
+	text: string;
+}
+
+export enum TagKind {
+	Warning,
+	Pairing,
+	PairingMinor,
+	Character,
+	CharacterMinor,
+	General,
+}

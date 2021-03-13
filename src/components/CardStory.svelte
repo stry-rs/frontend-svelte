@@ -1,13 +1,17 @@
 <script lang="ts">
+	import type { ITag } from "../utils/types";
 	import { Contrast, State, Rating } from "../utils/types";
 
 	import Link from "./Link.svelte";
-	import CardStoryTile from "./CardStoryTile.svelte";
-
 	import MediaObject from "./MediaObject.svelte";
+
+	import CardStoryTile from "./CardStoryTile.svelte";
+	import TagList from "./TagList.svelte";
 
 	export let state: State;
 	export let rating: Rating;
+
+	export let tags: ITag[];
 </script>
 
 <div class="my-2">
@@ -29,4 +33,7 @@
 			<p class="text-opacity-60 text-white">13 Jan 2021</p>
 		</span>
 	</MediaObject>
+	<div class="px-3 sm:px-6 lg:px-8 py-2 text-sm">
+		<TagList {tags} />
+	</div>
 </div>

@@ -8,6 +8,6 @@
 
 <ul>
 	{#each tags as tag}
-		<Tag />
+		<Tag id={tag.id} kind={tag.kind}>{tag.text}</Tag>
 	{/each}
 </ul>

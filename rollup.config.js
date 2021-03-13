@@ -40,7 +40,13 @@ export default {
 						script: "typescript",
 						style: "postcss",
 					},
-					postcss: true
+					postcss: {
+						plugins: [
+							require("tailwindcss"),
+							require("postcss-nested"),
+							require("autoprefixer"),
+						]
+					}
 				}),
 				compilerOptions: {
 					dev,
