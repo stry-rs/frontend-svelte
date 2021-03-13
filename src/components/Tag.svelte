@@ -8,21 +8,20 @@
 <style lang="postcss">
 .tag {
 	@apply inline-block;
-	@apply mr-2 mb-1 px-3 py-1;
+	@apply mb-1 mr-1 px-3 py-1;
 	@apply transition-colors duration-75;
-	@apply rounded focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-blue-400;
+	@apply rounded;
+}
+
+.tag:focus {
+	@apply ring-2 ring-offset-2 ring-offset-gray-900 ring-blue-400;
 }
 </style>
 
 <a
 	href={ "/tag/" + id }
 
-	class="
-		inline-block
-		mr-2 mb-1 px-3 py-1
-		transition-colors duration-75
-		rounded focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-blue-400
-	"
+	class="tag"
 
 	class:bg-red-400={kind === TagKind.Warning}
 	class:hover:bg-red-500={kind === TagKind.Warning}
