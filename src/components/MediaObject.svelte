@@ -1,6 +1,6 @@
 <script lang="ts"></script>
 
-<div class="flex px-3 sm:px-6 lg:px-8">
+<div class="flex">
 	<div>
 		<slot name="tile"></slot>
 	</div>

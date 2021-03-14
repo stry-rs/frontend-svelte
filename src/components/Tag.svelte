@@ -3,15 +3,38 @@
 
 	export let id: string;
 	export let kind: TagKind;
+
+	let url: string;
+
+	switch (kind) {
+		case TagKind.Warning:
+			url = "/warning/" + id;
+			break;
+		case TagKind.Pairing:
+		case TagKind.PairingMinor:
+			url = "/pairing/" + id;
+			break;
+		case TagKind.Character:
+		case TagKind.CharacterMinor:
+			url = "/character/" + id;
+			break;
+		case TagKind.General:
+			url = "/tag/" + id;
+			break;
+
+		default:
+			url = "/";
+			break;
+	}
 </script>
 
 <a
-	href={ "/tag/" + id }
+	href={url}
 
 	class="
 		inline-block
 		text-sm
-		mr-1 mb-1 px-3 py-1
+		mr-1.5 mb-1.5 px-2 py-0.5
 		transition-colors duration-75
 		rounded focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-blue-400
 	"
@@ -28,6 +51,9 @@
 	class:hover:bg-blue-500={kind === TagKind.Character}
 	class:bg-violet-400={kind === TagKind.CharacterMinor}
 	class:hover:bg-violet-500={kind === TagKind.CharacterMinor}
+
+	class:bg-gray-400={kind === TagKind.General}
+	class:hover:bg-gray-500={kind === TagKind.General}
 >
 	<slot></slot>
 </a>
